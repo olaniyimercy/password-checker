@@ -32,6 +32,7 @@ input {
     padding: .3rem .7rem;
     border-radius: 1rem;
     border: 0;
+    outline: none;
 }
 
 #submit {
