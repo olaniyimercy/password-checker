@@ -14,6 +14,7 @@ body {
     font-family: sans-serif;
     width: 100vw;
     height: 100vh;
+    margin: auto;
 }
 
 .container {
@@ -24,15 +25,17 @@ body {
     backdrop-filter: blur(.5rem);
     box-shadow: 0  0 10px rgba(0, 0, 0, .2);
     border-radius: .5rem;
-    padding: 2rem 1rem;
-    line-height: 2.5rem;
+    padding: 2rem 4rem;
+    line-height: 3.8rem;
 }
 
 input {
-    padding: .3rem .7rem;
-    border-radius: 1rem;
+    padding: .8rem 1rem;
+    border-radius: 2rem;
     border: 0;
     outline: none;
+    background: transparent;
+    box-shadow: 0  0 10px rgba(0, 0, 0, .4);
 }
 
 #submit {
@@ -56,6 +59,7 @@ input {
 .fgt-password {
     display: flex;
     flex-direction: column;
+    margin-top: -1rem;
 }
 .fgt-password:hover a {
     color: white;
