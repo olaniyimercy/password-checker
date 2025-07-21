@@ -1,16 +1,31 @@
-function checkp() {
-const passWord = document.getElementById('password').value;
-const strength = document.getElementById('displayStrength')
+const passwordInput = document.getElementById('password');
+const checker = document.getElementById('displayStrength');
+console.log(checker);
+console.log(passwordInput);
 
-     if (passWord.length < 3) {
-            displayStrength.value = 'Weak'
-            displayStrength.style.color = 'red'
-        } else if (passWord.length < 8) {
-           displayStrength.value = 'Medium'
-           displayStrength.style.color = 'yellow'
-        } else {
-            displayStrength.value = 'Strong'
-            displayStrength.style.color = 'green'
-        }
-}
+passwordInput.addEventListener('input', function () {
+    const passwordValue = passwordInput.value;
+    console.log(passwordValue);
+    
+    const includeLetters = /[a-zA-Z]/;
+    const includeNumbers = /[0-9]/;
+    const includeCharacters = /[~!@$#%&*()_+={}?><;:/-^]/;
 
+    const letters = includeLetters.test(passwordValue);
+    const numbers = includeNumbers.test(passwordValue);
+    const characters = includeCharacters.test(passwordValue);
+
+    if (!letters || !numbers || !characters) {
+        checker.textContent = 'Must contain numbers, alphabet and special characters';
+        checker.style.color = 'red';
+    }else if (passwordValue.length < 5) {
+        checker.textContent = 'Weak';
+        checker.style.color = 'red';
+    }else if (passwordValue.length >= 5 && passwordValue.length <= 8) {
+        checker.textContent = 'Medium';
+        checker.style.color = 'yellow';
+    }else {
+        checker.textContent = 'Strong';
+        checker.style.color = 'Green';
+    }
+});
