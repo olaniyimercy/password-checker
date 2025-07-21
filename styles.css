@@ -85,3 +85,13 @@ a {
 footer {
     font-size: .6rem;
 }
+
+@media (max-width:768px) {
+    body {
+        margin: auto;
+    }
+    .int {
+        display: flex;
+        align-items: center;
+    }
+}
